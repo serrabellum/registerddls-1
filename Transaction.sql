@@ -1,8 +1,9 @@
 CREATE TABLE Transaction (
-	transactionID integer PRIMARY KEY,
-	employeeID integer REFERENCES employeeDB (employeeID),
+	id uuid NOT NULL,
+	transactionid integer NOT NULL,
+	employeeid integer REFERENCES employee (employeeid),
 	totalCost numeric,
-	transactionType text,
+	transactionType character varying(32),
 	date date,
 	products json
 );
