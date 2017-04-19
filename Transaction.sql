@@ -1,5 +1,5 @@
 CREATE TABLE transaction (
-	id uuid NOT NULL,
+	id uuid SERIAL NOT NULL,
 	transactionid integer NOT NULL,
 	employeeid integer REFERENCES employee (employeeid),
 	totalCost numeric NOT NULL,
