@@ -11,6 +11,3 @@ CREATE TABLE transactionEntry (
   OIDS=FALSE
 );
 
-CREATE INDEX ix_transaction_transactionid
-  ON transaction
-  USING hash(transactionid);
