@@ -1,13 +1,10 @@
-CREATE EXTENSION "uuid-ossp";
-
 CREATE TABLE transactionEntry (
 	id uuid NOT NULL,
 	quantity integer NOT NULL,
 	productName text,
-	productid character varying REFERENCES product productid,
+	product uuid REFERENCES product (id),
 	price numeric,
-	transactionid character varying REFERENCES transaction transactionid 
+	transactionid uuid REFERENCES transaction (id) 
 ) WITH (
   OIDS=FALSE
 );
-
