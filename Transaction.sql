@@ -4,8 +4,7 @@ CREATE TABLE transaction (
 	employeeid integer REFERENCES employee (employeeid),
 	totalCost numeric NOT NULL,
 	transactionType character varying(32) NOT NULL,
-	date date NOT NULL,
-	products json
+	date date NOT NULL
 	CONSTRAINT transactionid PRIMARY KEY (id)
 ) WITH (
   OIDS=FALSE
