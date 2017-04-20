@@ -1,15 +1,11 @@
 CREATE TABLE transaction (
-	id uuid SERIAL NOT NULL,
+	id uuid NOT NULL,
 	transactionid integer NOT NULL,
-	employeeid integer REFERENCES employee (employeeid),
+	employeeid integer,
 	totalCost numeric NOT NULL,
 	transactionType character varying(32) NOT NULL,
-	date date NOT NULL
+	date date NOT NULL,
 	CONSTRAINT transactionid PRIMARY KEY (id)
 ) WITH (
-  OIDS=FALSE
+	OIDS=FALSE
 );
-
-CREATE INDEX ix_transaction_transactionid
-  ON transaction
-  USING hash(transactionid);
